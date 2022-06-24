@@ -1,4 +1,5 @@
 import { StorageStack } from "./StorageStack";
+import { ApiStack } from "./ApiStack";
 
 export default function main(app) {
   app.setDefaultFunctionProps({
@@ -8,5 +9,6 @@ export default function main(app) {
       format: "esm",
     },
   });
-  app.stack(StorageStack);
+  //all the imports are chained below
+  app.stack(StorageStack).stack(ApiStack); 
 }
