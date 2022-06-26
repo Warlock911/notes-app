@@ -1,5 +1,6 @@
 import { StorageStack } from "./StorageStack";
 import { ApiStack } from "./ApiStack";
+import { AuthStack } from "./AuthStack";
 
 export default function main(app) {
   app.setDefaultFunctionProps({
@@ -10,5 +11,5 @@ export default function main(app) {
     },
   });
   //all the imports are chained below
-  app.stack(StorageStack).stack(ApiStack); 
+  app.stack(StorageStack).stack(ApiStack).stack(AuthStack);
 }
